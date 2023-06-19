@@ -13,5 +13,6 @@
     padding: $ui-step * 4;
     background-color: $main-color;
     border-radius: $big-border;
+    width: 120*$ui-step;
 }
 </style>
