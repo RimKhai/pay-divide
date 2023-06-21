@@ -38,6 +38,9 @@ const props = defineProps({
     margin-left: 2*$ui-step;
     cursor: pointer;
     background: $additional-color !important;
+    &:hover {
+        background: $hover-color !important;
+    }
 }
 .input {
     margin-left: 2*$ui-step;
