@@ -1,9 +1,10 @@
 <script setup>
-import { useMemberStore } from "../stores/MemberStore"
+import { useProductStore } from "../stores/ProductStore"
 import { ref } from "vue";
 
-const memberStore = useMemberStore()
+const productStore = useProductStore()
 const name = ref("")
+const cost = ref("")
 
 const props = defineProps({
     id: Number
@@ -11,15 +12,16 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="member-field d-flex align-items-center">
+    <div class="product-field d-flex align-items-center">
         <BAvatar class="avatar"></BAvatar>
-        <BFormInput class="input" v-model="name" @input="memberStore.addMemberName(id, name)"/>
-        <BButton pill class="button" @click="memberStore.deleteMember(id)">-</BButton>
+        <BFormInput class="input" v-model="name" @input="productStore.addProductName(id, name)"/>
+        <BFormInput class="input" v-model="cost" @input="productStore.addProductCost(id, cost)"/>
+        <BButton pill class="button" @click="productStore.deleteProduct(id)">-</BButton>
     </div>
 </template>
 
 <style lang='scss' scoped>
-.member-field {
+.product-field {
     width: 100%;
     padding: 2*$ui-step;
     background: $second-color;
