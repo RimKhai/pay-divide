@@ -2,6 +2,7 @@
 import MemberField from "../entities/MemberField.vue"
 import { useMemberStore } from "../stores/MemberStore";
 const memberStore = useMemberStore();
+console.log(memberStore.homies)
 </script>
 
 <template>

@@ -1,8 +1,12 @@
 <script setup>
+const emit = defineEmits(["onClick"])
+const onClick = () => {
+    emit("onClick")
+}
 </script>
 
 <template>
-    <BButton class="add_button px-4">
+    <BButton class="add_button px-4" @click="onClick">
                     <div>
                         <slot></slot>
                     </div>

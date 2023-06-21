@@ -21,8 +21,8 @@ export const useMemberStore = defineStore("memberStore", {
         ]
     }),
     actions: {
-        addNewMember(name) {
-            this.homies = [...this.homies, {id: Date.now(), name: name, cost: 0}]
+        addNewMember() {
+            this.homies = [...this.homies, {id: Date.now(), name: "", cost: ""}]
         },
         deleteMember(id) {
             this.homies = this.homies.filter(item => item.id !== id)
