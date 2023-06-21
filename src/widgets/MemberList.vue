@@ -12,7 +12,7 @@ console.log(memberStore.homies)
             class="members-item rounded-2 p-2 d-flex justify-content-between align-items-center"
             :key="homie.id"
         >
-            <MemberField ></MemberField>
+            <MemberField :id="homie.id"></MemberField>
         </b-list-group-item>
     </b-list-group>
 </template>

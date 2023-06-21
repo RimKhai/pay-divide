@@ -1,11 +1,20 @@
 <script setup>
+import { useMemberStore } from "../stores/MemberStore"
+
+const memberStore = useMemberStore()
+
+const props = defineProps({
+    name: String,
+    id: Number
+})
+console.log(memberStore.homies )
 </script>
 
 <template>
     <div class="member-field d-flex align-items-center">
         <BAvatar class="avatar"></BAvatar>
         <BFormInput class="input" />
-        <BAvatar class="button">-</BAvatar>
+        <BButton pill class="button" @click="memberStore.deleteMember(id)">-</BButton>
     </div>
 </template>
 
