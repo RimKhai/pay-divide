@@ -26,6 +26,14 @@ export const useMemberStore = defineStore("memberStore", {
         },
         deleteMember(id) {
             this.homies = this.homies.filter(item => item.id !== id)
+        },
+        addMemberName(id, name) {
+            this.homies.map(item => {
+                if(item.id === id) {
+                    item.name = name
+                }
+            })
+            console.log(this.homies)
         }
     }
 })

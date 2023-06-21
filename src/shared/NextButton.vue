@@ -7,17 +7,20 @@ const props = defineProps({
 <template>
     <div class="next w-100">
         <RouterLink :to="{name: routeName }">
-            <BButton class="w-100 button button__next">Дальше!</BButton>
+            <BButton class="button button__next">Дальше!</BButton>
         </RouterLink>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.button {
-    background-color: $additional-color;
-}
-
 .button__next {
-    margin-top: $ui-step * 2;
+    border-radius: $pill;
+    width: 40*$ui-step;
+    border-color: $additional-color;
+    color: $text-color;
+    background: $additional-color;
+    &:hover {
+        background: $hover-color;
+    }
 }
 </style>
