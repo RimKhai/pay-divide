@@ -7,7 +7,6 @@ const props = defineProps({
     name: String,
     id: Number
 })
-console.log(memberStore.homies )
 </script>
 
 <template>

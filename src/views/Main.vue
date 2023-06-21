@@ -1,6 +1,7 @@
 <script setup>
 import BaseBlock from "../shared/BaseBlock.vue";
 import AddButton from "../shared/AddButton.vue";
+import NextButton from "../shared/NextButton.vue"
 import MemberList from "../widgets/MemberList.vue";
 import { useMemberStore } from "../stores/MemberStore";
 
@@ -10,6 +11,7 @@ const memberStore = useMemberStore()
     <BaseBlock>
         <AddButton @onClick="memberStore.addNewMember()">Добавить человека</AddButton>
         <MemberList />
+        <NextButton :routeName="'AddProductsView'"/>
     </BaseBlock>
 </template>
 <style lang='scss' scoped>
