@@ -18,4 +18,12 @@ $pill: 9999px;
 @mixin ui-border($color) {
     border-color: $color;
     box-shadow: 0 0 0 0.2rem $color;
+};
+
+@mixin color-flag($flag: true) {
+    @if $flag {
+        background-color: $hover-color;
+    } @else {
+        background-color: $second-color;
+    }
 }

@@ -8,12 +8,12 @@ const productStore = useProductStore();
 <template>
     <b-list-group class="list">
         <b-list-group-item
-            v-for="homie in productStore.homies"
+            v-for="(product, index) in productStore.products"
             class="products-item rounded-2 p-2 d-flex flex-column"
-            :key="homie.id"
+            :key="product.id"
         >
-            <ProductField :id="homie.id"></ProductField>
-            <MemberGroupCards />
+            <ProductField :id="product.id"></ProductField>
+            <MemberGroupCards :product_index="index" :product_id="product.id"/>
         </b-list-group-item>
     </b-list-group>
 </template>

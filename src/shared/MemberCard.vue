@@ -1,11 +1,27 @@
 <script setup>
+import { useMemberStore } from '../stores/MemberStore';
+import { useProductStore } from "../stores/ProductStore"
+
 const props = defineProps({
     label: String,
-})
+    flag: Boolean,
+    member_id: Number,
+    product_id: Number
+});
+
+const memberStore = useMemberStore()
+const productStore = useProductStore()
+
 </script>
 
 <template>
-    <div class="card d-flex flex-column justify-content-center align-items-center">
+    <div
+        @click="productStore.changeFlag(product_id, member_id)"
+        :class="
+            [flag ? 'card__check' : 'card__not-checked'] +
+            ' card d-flex flex-column justify-content-center align-items-center'
+        "
+    >
         <BAvatar></BAvatar>
         <p>{{ label }}</p>
     </div>
@@ -13,9 +29,15 @@ const props = defineProps({
 
 <style lang='scss' scoped>
 .card {
-    background: $second-color;
-    padding: 2*$ui-step;
+    padding: 2 * $ui-step;
     height: 100%;
-    width: 20*$ui-step;
+    width: 20 * $ui-step;
+    cursor: pointer;
+}
+.card__check {
+    background: $hover-color;
+}
+.card__not-checked {
+    background: $second-color;
 }
 </style>
