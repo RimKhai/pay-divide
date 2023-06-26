@@ -18,7 +18,7 @@ const memberStore = useMemberStore();
 
 <style lang="scss" scoped>
 .members-item {
-    width: $ui-step * 100;
+    width: $ui-step * 160;
     background-color: $additional-color;
     margin-top: $ui-step * 2;
 }

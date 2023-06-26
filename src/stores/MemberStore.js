@@ -5,7 +5,7 @@ export const useMemberStore = defineStore("memberStore", {
         homies: [
             {   
                 id: 0,
-                name: 'Секретный Персонаж',
+                name: 'Рим',
                 cost: 15
             },
             {

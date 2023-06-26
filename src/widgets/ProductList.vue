@@ -1,5 +1,6 @@
 <script setup>
-import ProductField from "../entities/ProductField.vue"
+import ProductField from "../entities/ProductField.vue";
+import MemberGroupCards from "../entities/MemberGroupCards.vue";
 import { useProductStore } from "../stores/ProductStore";
 const productStore = useProductStore();
 </script>
@@ -8,17 +9,18 @@ const productStore = useProductStore();
     <b-list-group class="list">
         <b-list-group-item
             v-for="homie in productStore.homies"
-            class="products-item rounded-2 p-2 d-flex justify-content-between align-items-center"
+            class="products-item rounded-2 p-2 d-flex flex-column"
             :key="homie.id"
         >
             <ProductField :id="homie.id"></ProductField>
+            <MemberGroupCards />
         </b-list-group-item>
     </b-list-group>
 </template>
 
 <style lang="scss" scoped>
 .products-item {
-    width: $ui-step * 100;
+    width: $ui-step * 160;
     background-color: $additional-color;
     margin-top: $ui-step * 2;
 }

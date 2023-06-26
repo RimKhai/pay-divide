@@ -12,7 +12,6 @@ const productStore = useProductStore()
     <BaseBlock>
         <AddButton @onClick="productStore.addNewProduct()">Добавить позицию</AddButton>
         <ProductList />
-        <MemberGroupCards />
         <NextButton :routeName="'AddProductsView'"/>
     </BaseBlock>
 </template>

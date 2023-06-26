@@ -15,5 +15,7 @@ const props = defineProps({
 .card {
     background: $second-color;
     padding: 2*$ui-step;
+    height: 100%;
+    width: 20*$ui-step;
 }
 </style>
