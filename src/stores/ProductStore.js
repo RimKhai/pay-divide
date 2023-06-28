@@ -6,33 +6,36 @@ export const useProductStore = defineStore("productStore", {
         products: [
             {
                 id: 0,
-                name: "Секретный Персонаж",
+                name: "",
                 cost: 15,
                 flags: {
                     0: false,
                     1: true,
                     2: false,
                 },
+                whoPays: ""
             },
             {
                 id: 1,
-                name: "Адиль",
+                name: "",
                 cost: 15,
                 flags: {
                     0: false,
                     1: true,
                     2: true,
                 },
+                whoPays: ""
             },
             {
                 id: 2,
-                name: "Игорь",
+                name: "",
                 cost: 15,
                 flags: {
                     0: true,
                     1: true,
                     2: false,
                 },
+                whoPays: ""
             },
         ],
     }),
@@ -45,11 +48,9 @@ export const useProductStore = defineStore("productStore", {
             })
             this.products = [
                 ...this.products,
-                { id: Date.now(), name: "", cost: "", flags: {} },
+                { id: Date.now(), name: "", cost: "", flags: {}, whoPays: "" },
             ]
-            this.products.map((product) => {
-                product.flags = { ...product.flags, ...obj }
-            })
+            this.products.at(-1).flags = { ...this.products.at(-1).flags, ...obj }
             console.log(this.products)
         },
         deleteProduct(id) {
@@ -91,6 +92,15 @@ export const useProductStore = defineStore("productStore", {
         },
         getTotalCost () {
              return this.products.reduce((accum, item) => accum += Number(item.cost), 0)
+        },
+        isEmpty() {
+            return this.products.reduce((accum, item) => {
+                return accum *= (item.name !== '') * (item.cost !== '')
+            }, true)
+        },
+        onPayerSelect(selected_id, product_index) {
+            this.products[product_index].whoPays = selected_id
+            console.log(this.products)
         }
     },
 })

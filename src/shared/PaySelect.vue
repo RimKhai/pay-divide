@@ -1,15 +1,24 @@
 <script setup>
 import { ref } from "vue";
+import { useProductStore } from "../stores/ProductStore";
+
+const productStore = useProductStore()
 
 const selected = ref(null);
 const props = defineProps({
-    options: Array
+    options: Array,
+    product_index: Number,
 })
+// const emits = defineEmits(["onInput"])
+// const onInput = () => {
+//     emits["onInput"]
+// }
 </script>
 
 <template>
     <div>
         <b-form-select
+            @input="productStore.onPayerSelect(selected, product_index)"
             v-model="selected"
             :options="options"
             size="sm"

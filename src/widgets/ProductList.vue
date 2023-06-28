@@ -24,8 +24,10 @@ const options = useMemberStore().homies.reduce(
             :key="product.id"
         >
             <ProductField :id="product.id"></ProductField>
-            <PaySelect :options="options" />
-            <MemberGroupCards :product_index="index" :product_id="product.id" />
+            <PaySelect :product_index="index" :options="options" />
+            <div class="cards-tabs">
+                <MemberGroupCards :product_index="index" :product_id="product.id" />
+            </div>
         </b-list-group-item>
     </b-list-group>
 </template>
@@ -41,6 +43,12 @@ const options = useMemberStore().homies.reduce(
     flex-wrap: nowrap;
     white-space: nowrap;
     max-height: 100 * $ui-step;
+    overflow: auto;
+}
+.cards-tabs {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    max-width: 160 * $ui-step;
     overflow: auto;
 }
 .list {

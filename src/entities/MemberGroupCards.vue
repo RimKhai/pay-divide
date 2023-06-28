@@ -14,12 +14,14 @@ const props = defineProps({
 
 <template>
     <b-list-group class="d-flex flex-row my-2">
-        <MemberCard
+        <div>
+            <MemberCard
             :label="'Все'"
             :flag="productStore.products[product_index].flags['All']"
             :product_id="product_id"
             :member_id="'All'"
         />
+        </div>
         <div class="ms-1" v-for="member in memberStore.homies" :key="member.id">
             <MemberCard
                 :label="member.name"

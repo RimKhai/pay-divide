@@ -5,17 +5,17 @@ export const useMemberStore = defineStore("memberStore", {
         homies: [
             {
                 id: 0,
-                name: "Рим",
+                name: "",
                 cost: 15,
             },
             {
                 id: 1,
-                name: "Адиль",
+                name: "",
                 cost: 15,
             },
             {
                 id: 2,
-                name: "Игорь",
+                name: "",
                 cost: 15,
             },
         ],
@@ -38,5 +38,10 @@ export const useMemberStore = defineStore("memberStore", {
             })
             console.log(this.homies)
         },
+        isEmpty() {
+            return this.homies.reduce((accum, item) => {
+                return accum *= (item.name !== '')
+            }, true)
+        }
     },
 })

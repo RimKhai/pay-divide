@@ -1,14 +1,15 @@
 <script setup>
 const props = defineProps({
     routeName: String,
-    label: String
+    label: String,
+    isDisabled: Boolean
 });
 </script>
 
 <template>
     <div class="next w-100">
         <RouterLink :to="{name: routeName }">
-            <BButton class="button button__next">{{ label }}</BButton>
+            <BButton :disabled="isDisabled" class="button button__next">{{ (isDisabled) ? "Введите все поля!" : label }}</BButton>
         </RouterLink>
     </div>
 </template>
