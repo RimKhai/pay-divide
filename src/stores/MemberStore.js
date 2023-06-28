@@ -40,7 +40,7 @@ export const useMemberStore = defineStore("memberStore", {
         },
         isEmpty() {
             return this.homies.reduce((accum, item) => {
-                return accum *= (item.name !== '')
+                return accum *= (item.name.replaceAll(' ', '') !== '')
             }, true)
         }
     },

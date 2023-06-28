@@ -95,7 +95,7 @@ export const useProductStore = defineStore("productStore", {
         },
         isEmpty() {
             return this.products.reduce((accum, item) => {
-                return accum *= (item.name !== '') * (item.cost !== '')
+                return accum *= (item.name.replaceAll(' ', '') !== '') * (Number(String(item.cost).replaceAll(0, '')) !== 0)
             }, true)
         },
         onPayerSelect(selected_id, product_index) {
