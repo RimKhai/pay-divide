@@ -5,19 +5,22 @@ import PaySelect from "../shared/paySelect.vue";
 import { useProductStore } from "../stores/ProductStore";
 import { useMemberStore } from "../stores/MemberStore";
 
-const memberStore = useMemberStore()
+const memberStore = useMemberStore();
 const productStore = useProductStore();
 
-const options = useMemberStore().homies.reduce((accum, item) => {
-    return [...accum, {value: item.cost, text: item.name}]
-}, [{ value: null, text: 'Who Pays' }])
+const options = useMemberStore().homies.reduce(
+    (accum, item) => {
+        return [...accum, { value: item.id, text: item.name }];
+    },
+    [{ value: null, text: "Who Pays" }]
+);
 </script>
 
 <template>
-    <b-list-group class="list">
+    <b-list-group class="list nav-tabs">
         <b-list-group-item
             v-for="(product, index) in productStore.products"
-            class="products-item rounded-2 p-2 d-flex flex-column"
+            class="products-item p-2 d-flex flex-column"
             :key="product.id"
         >
             <ProductField :id="product.id"></ProductField>
@@ -32,6 +35,13 @@ const options = useMemberStore().homies.reduce((accum, item) => {
     width: $ui-step * 160;
     background-color: $additional-color;
     margin-top: $ui-step * 2;
+    border-radius: $big-border !important;
+}
+.nav-tabs {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    max-height: 100 * $ui-step;
+    overflow: auto;
 }
 .list {
     margin-top: $ui-step * 3;

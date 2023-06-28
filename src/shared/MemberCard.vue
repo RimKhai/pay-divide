@@ -36,6 +36,7 @@ const productStore = useProductStore()
 }
 .card__check {
     background: $hover-color;
+    color: $text-color !important;
     transition-duration: 1000ms;
 }
 .card__not-checked {

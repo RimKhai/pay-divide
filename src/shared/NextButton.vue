@@ -1,13 +1,14 @@
 <script setup>
 const props = defineProps({
     routeName: String,
+    label: String
 });
 </script>
 
 <template>
     <div class="next w-100">
         <RouterLink :to="{name: routeName }">
-            <BButton class="button button__next">Дальше!</BButton>
+            <BButton class="button button__next">{{ label }}</BButton>
         </RouterLink>
     </div>
 </template>

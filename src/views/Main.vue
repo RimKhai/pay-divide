@@ -11,7 +11,7 @@ const memberStore = useMemberStore()
     <BaseBlock>
         <AddButton @onClick="memberStore.addNewMember()">Добавить человека</AddButton>
         <MemberList />
-        <NextButton :routeName="'AddProductsView'"/>
+        <NextButton :routeName="'AddProductsView'" :label="'Дальше!'"/>
     </BaseBlock>
 </template>
 <style lang='scss' scoped>

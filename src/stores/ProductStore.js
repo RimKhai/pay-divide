@@ -89,5 +89,8 @@ export const useProductStore = defineStore("productStore", {
                 })
             }
         },
+        getTotalCost () {
+             return this.products.reduce((accum, item) => accum += Number(item.cost), 0)
+        }
     },
 })
