@@ -36,8 +36,10 @@ const productStore = useProductStore()
 }
 .card__check {
     background: $hover-color;
+    transition-duration: 1000ms;
 }
 .card__not-checked {
     background: $second-color;
+    transition-duration: 1000ms;
 }
 </style>

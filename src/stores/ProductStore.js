@@ -69,7 +69,7 @@ export const useProductStore = defineStore("productStore", {
                     item.cost = cost
                 }
             })
-            console.log(this.homies)
+            console.log(this.products)
         },
         changeFlag(product_id, member_id) {
             if (member_id === "All") {
