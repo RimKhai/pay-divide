@@ -10,7 +10,9 @@ import { useMemberStore } from "../stores/MemberStore"
 const productStore = useProductStore()
 const memberStore = useMemberStore()
 
-const members_ids = ref(memberStore.homies.reduce((accum, item) =>  [...accum, item.id], []))
+const members_ids = memberStore.homies.reduce((accum, item) =>  [...accum, item.id], [])
+
+
 </script>
 <template>
     <BaseBlock>
@@ -22,7 +24,7 @@ const members_ids = ref(memberStore.homies.reduce((accum, item) =>  [...accum, i
                 {{ productStore.getTotalCost() }}
             </p>
         </div>
-        <NextButton :isDisabled="!Boolean(productStore.isEmpty())" :routeName="'AddProductsView'" :label="'К результатам!'"/>
+        <NextButton :isDisabled="!Boolean(productStore.isEmpty()*Object.keys(productStore.products).length)" :routeName="'AddProductsView'" :label="'К результатам!'"/>
     </BaseBlock>
 </template>
 <style lang='scss' scoped>

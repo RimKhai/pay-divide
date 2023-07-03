@@ -1,18 +1,17 @@
 <script setup>
 import ProductField from "../entities/ProductField.vue";
 import MemberGroupCards from "../entities/MemberGroupCards.vue";
-import PaySelect from "../shared/paySelect.vue";
+import PaySelect from "../shared/PaySelect.vue";
 import { useProductStore } from "../stores/ProductStore";
 import { useMemberStore } from "../stores/MemberStore";
 
-const memberStore = useMemberStore();
-const productStore = useProductStore();
+const productStore = useProductStore(); 
 
 const options = useMemberStore().homies.reduce(
     (accum, item) => {
         return [...accum, { value: item.id, text: item.name }];
     },
-    [{ value: null, text: "Who Pays" }]
+    []
 );
 </script>
 

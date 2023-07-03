@@ -23,7 +23,11 @@ const props = defineProps({
             :options="options"
             size="sm"
             class="mt-3 form-select"
-        ></b-form-select>
+        >
+        <template #first>
+            <b-form-select-option :value="null" disabled>Кто платит?</b-form-select-option>
+        </template>
+    </b-form-select>
     </div>
 </template>
 

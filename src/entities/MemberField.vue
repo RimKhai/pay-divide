@@ -12,7 +12,7 @@ const props = defineProps({
 
 <template>
     <div class="member-field d-flex align-items-center">
-        <BAvatar class="avatar"></BAvatar>
+        <BAvatar class="avatar" :text="name.at(0)"></BAvatar>
         <BFormInput class="input" v-model="name" @input="memberStore.addMemberName(id, name)"/>
         <BButton pill class="button" @click="memberStore.deleteMember(id)">-</BButton>
     </div>
@@ -32,11 +32,12 @@ const props = defineProps({
     border-radius: 2px;
     margin-left: 2*$ui-step;
     cursor: pointer;
-    background: $additional-color !important;
+    background: $additional-color !important; // перегрузка ui кита
     &:hover {
         background: $hover-color !important;
     }
 }
+
 .input {
     margin-left: 2*$ui-step;
 }

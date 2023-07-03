@@ -12,7 +12,7 @@ const memberStore = useMemberStore()
     <BaseBlock>
         <AddButton @onClick="memberStore.addNewMember()">Добавить человека</AddButton>
         <MemberList />
-        <NextButton :isDisabled="!Boolean(memberStore.isEmpty())" :routeName="'AddProductsView'" :label="'Дальше!'"/>
+        <NextButton :isDisabled="!Boolean(memberStore.isEmpty()*Object.keys(memberStore.homies).length)" :routeName="'AddProductsView'" :label="'Дальше!'"/>
     </BaseBlock>
 </template>
 <style lang='scss' scoped>

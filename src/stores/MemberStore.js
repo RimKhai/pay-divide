@@ -3,25 +3,17 @@ import { defineStore } from "pinia"
 export const useMemberStore = defineStore("memberStore", {
     state: () => ({
         homies: [
+            /*
             {
-                id: 0,
-                name: "",
-                cost: 15,
-            },
-            {
-                id: 1,
-                name: "",
-                cost: 15,
-            },
-            {
-                id: 2,
-                name: "",
-                cost: 15,
-            },
+                id: Number,
+                name: String,
+                cost: Number
+            }
+            */
         ],
     }),
     actions: {
-        addNewMember() {
+        addNewMember() {    
             this.homies = [
                 ...this.homies,
                 { id: Date.now(), name: "", cost: "" },
@@ -36,11 +28,10 @@ export const useMemberStore = defineStore("memberStore", {
                     item.name = name
                 }
             })
-            console.log(this.homies)
         },
         isEmpty() {
             return this.homies.reduce((accum, item) => {
-                return accum *= (item.name.replaceAll(' ', '') !== '')
+                return accum *=(Object.keys(this.homies).length >= 2) * (item.name.replaceAll(' ', '') !== '')
             }, true)
         }
     },

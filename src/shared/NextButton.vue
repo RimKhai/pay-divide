@@ -8,8 +8,8 @@ const props = defineProps({
 
 <template>
     <div class="next w-100">
-        <RouterLink :to="{name: routeName }">
-            <BButton :disabled="isDisabled" class="button button__next">{{ (isDisabled) ? "Введите все поля!" : label }}</BButton>
+        <RouterLink :to="(isDisabled) ? {} : {name: routeName }">
+            <BButton :disabled="isDisabled" class="button button__next">{{ (isDisabled) ? "Введите поля!" : label }}</BButton>
         </RouterLink>
     </div>
 </template>
