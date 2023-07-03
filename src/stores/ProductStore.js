@@ -14,42 +14,6 @@ export const useProductStore = defineStore("productStore", {
                 whoPays: Number
             }
             */
-            {
-                id: 1,
-                name: "String",
-                cost: 10,
-                flags: {
-                    "All" : true,
-                    1 : true,
-                    2 : true,
-                    3 : true
-                },
-                whoPays: 1
-            },
-            {
-                id: 2,
-                name: "Cucumber",
-                cost: 100,
-                flags: {
-                    "All" : true,
-                    1 : true,
-                    2 : true,
-                    3 : true
-                },
-                whoPays: 2
-            },
-            {
-                id: 3,
-                name: "Pomo",
-                cost: 1000,
-                flags: {
-                    "All" : true,
-                    1 : true,
-                    2 : true,
-                    3 : true,
-                },
-                whoPays: 2
-            }
         ],
     }),
     actions: {

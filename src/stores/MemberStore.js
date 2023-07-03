@@ -10,18 +10,6 @@ export const useMemberStore = defineStore("memberStore", {
                 cost: Number
             }
             */
-            {
-                id: 1,
-                name: "Лиза",
-            },
-            {
-                id: 2,
-                name: "Рим",
-            },
-            {
-                id: 3,
-                name: "Саша",
-            }
         ],
     }),
     actions: {

@@ -9,9 +9,6 @@ const memberStore = useMemberStore();
 const resultStore = useResultStore();
 
 resultStore.setResults(memberStore.homies, productStore.products);
-
-console.log(memberStore.homies);
-console.log(productStore.products);
 </script>
 <template>
     <BaseBlock>

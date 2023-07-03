@@ -3,30 +3,6 @@ import { defineStore } from "pinia"
 export const useResultStore = defineStore("resultStore", {
     state: () => ({
         results: [
-            // {
-            //     id: 1,
-            //     name: "Лиза",
-            //     dept: {
-            //         1 : 0,
-            //         2 : 0
-            //     },
-            //     loan: {
-            //         1: 0,
-            //         2 : 500
-            //     }
-            // },
-            // {
-            //     id: 2,
-            //     name: "Рим",
-            //     dept: {
-            //         1 : 500,
-            //         2 : 0
-            //     },
-            //     loan: {
-            //         1: 0,
-            //         2 : 0
-            //     }
-            // },
         ],
     }),
     actions: {
