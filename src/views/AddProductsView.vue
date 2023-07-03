@@ -24,7 +24,7 @@ const members_ids = memberStore.homies.reduce((accum, item) =>  [...accum, item.
                 {{ productStore.getTotalCost() }}
             </p>
         </div>
-        <NextButton :isDisabled="!Boolean(productStore.isEmpty()*Object.keys(productStore.products).length)" :routeName="'AddProductsView'" :label="'К результатам!'"/>
+        <NextButton :isDisabled="!Boolean(productStore.isEmpty()*Object.keys(productStore.products).length)" :routeName="'ResultsView'" :label="'К результатам!'"/>
     </BaseBlock>
 </template>
 <style lang='scss' scoped>

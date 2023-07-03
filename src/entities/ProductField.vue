@@ -13,8 +13,8 @@ const props = defineProps({
 
 <template>
     <div class="product-field d-flex align-items-center">
-        <BFormInput class="input" v-model="name" @input="productStore.addProductName(id, name)"/>
-        <BFormInput class="input" v-model="cost" @input="productStore.addProductCost(id, cost)"/>
+        <BFormInput class="input" placeholder="Название продукта" v-model="name" @input="productStore.addProductName(id, name)"/>
+        <BFormInput class="input" placeholder="Цена" v-model="cost" @input="productStore.addProductCost(id, cost)"/>
         <BButton pill class="button" @click="productStore.deleteProduct(id)">-</BButton>
     </div>
 </template>

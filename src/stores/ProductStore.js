@@ -14,6 +14,42 @@ export const useProductStore = defineStore("productStore", {
                 whoPays: Number
             }
             */
+            {
+                id: 1,
+                name: "String",
+                cost: 10,
+                flags: {
+                    "All" : true,
+                    1 : true,
+                    2 : true,
+                    3 : true
+                },
+                whoPays: 1
+            },
+            {
+                id: 2,
+                name: "Cucumber",
+                cost: 100,
+                flags: {
+                    "All" : true,
+                    1 : true,
+                    2 : true,
+                    3 : true
+                },
+                whoPays: 2
+            },
+            {
+                id: 3,
+                name: "Pomo",
+                cost: 1000,
+                flags: {
+                    "All" : true,
+                    1 : true,
+                    2 : true,
+                    3 : true,
+                },
+                whoPays: 2
+            }
         ],
     }),
     actions: {
@@ -78,6 +114,17 @@ export const useProductStore = defineStore("productStore", {
                 (accum, item) => (accum += Number(item.cost)),
                 0
             )
+        },
+        getCosts() {
+            let obj = {}
+            this.products.map(item => {
+                obj[item.whoPays] = 0
+            })
+            this.products.map(item => {
+                obj[item.whoPays] += item.cost
+            })
+            console.log(obj)
+            return obj
         },
         isEmpty() {
             return this.products.reduce((accum, item) => {

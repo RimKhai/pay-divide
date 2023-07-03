@@ -8,8 +8,6 @@ const props = defineProps({
     member_id: Number,
     product_id: Number
 });
-
-const memberStore = useMemberStore()
 const productStore = useProductStore()
 
 </script>
@@ -22,7 +20,7 @@ const productStore = useProductStore()
             ' card d-flex flex-column justify-content-center align-items-center'
         "
     >
-        <BAvatar></BAvatar>
+        <BAvatar :text="label.at(0)"></BAvatar>
         <p>{{ label }}</p>
     </div>
 </template>

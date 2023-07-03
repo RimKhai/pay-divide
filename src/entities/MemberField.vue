@@ -13,7 +13,7 @@ const props = defineProps({
 <template>
     <div class="member-field d-flex align-items-center">
         <BAvatar class="avatar" :text="name.at(0)"></BAvatar>
-        <BFormInput class="input" v-model="name" @input="memberStore.addMemberName(id, name)"/>
+        <BFormInput class="input" placeholder="Имя" v-model="name" @input="memberStore.addMemberName(id, name)"/>
         <BButton pill class="button" @click="memberStore.deleteMember(id)">-</BButton>
     </div>
 </template>

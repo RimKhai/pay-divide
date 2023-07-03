@@ -10,13 +10,25 @@ export const useMemberStore = defineStore("memberStore", {
                 cost: Number
             }
             */
+            {
+                id: 1,
+                name: "Лиза",
+            },
+            {
+                id: 2,
+                name: "Рим",
+            },
+            {
+                id: 3,
+                name: "Саша",
+            }
         ],
     }),
     actions: {
         addNewMember() {    
             this.homies = [
                 ...this.homies,
-                { id: Date.now(), name: "", cost: "" },
+                { id: Date.now(), name: "" },
             ]
         },
         deleteMember(id) {
@@ -33,6 +45,6 @@ export const useMemberStore = defineStore("memberStore", {
             return this.homies.reduce((accum, item) => {
                 return accum *=(Object.keys(this.homies).length >= 2) * (item.name.replaceAll(' ', '') !== '')
             }, true)
-        }
+        },
     },
 })
