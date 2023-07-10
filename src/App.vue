@@ -9,5 +9,6 @@
 <style lang="scss">
 body {
   background: $background-color !important;
+  font-family: "Roboto" !important;
 }
 </style>

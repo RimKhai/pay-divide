@@ -5,6 +5,8 @@ import { createPinia } from 'pinia'
 import './style.css'
 import App from './App.vue'
 import Main from "./views/Main.vue"
+import AddProductsView from "./views/AddProductsView.vue"
+import ResultsView from "./views/ResultsView.vue"
 import { BootstrapVue3 } from 'bootstrap-vue-3'
 
 import "bootstrap/dist/css/bootstrap.css"
@@ -20,6 +22,16 @@ const router = createRouter({
         path: "/",
         component: Main,
       },
+      {
+        name: "AddProductsView",
+        path: "/products",
+        component: AddProductsView
+      },
+      {
+        name: "ResultsView",
+        path: "/results",
+        component: ResultsView
+      }
 
     ],
   });
